@@ -17,19 +17,34 @@ class Food(models.Model):
     def __str__(self):
         return self.name
     
-
-# class Recipe(models.Model):
-#     name = models.CharField(max_length=100, default = '')
-#     components = models.ForeignKey(Component, on_delete= models.DO_NOTHING)
-#     calories = models.FloatField()  
-#     protein = models.FloatField()
-#     carbs = models.FloatField()
-#     fat = models.FloatField()   
-
 class Entry(models.Model):
     food = models.ForeignKey(Food, blank = True, null = True, on_delete= models.DO_NOTHING)
     date = date.today()
     serving = models.FloatField()
+
+class CalorieGoal(models.Model):
+    count = models.FloatField()
+
+class ProteinGoal(models.Model):
+    count = models.FloatField()
+
+class CarbGoal(models.Model):
+    count = models.FloatField()
+
+class FatGoal(models.Model):
+    count = models.FloatField()
+
+class Instance(models.Model):
+    calorie_goal = models.FloatField()
+    protein_goal = models.FloatField()
+    carbs_goal = models.FloatField()
+    fat_goal = models.FloatField()
+    curr_calories = models.FloatField()
+    curr_protein = models.FloatField()
+    curr_carbs = models.FloatField()
+    curr_fat = models.FloatField()
+    weight = models.FloatField()
+    date = date.today()
 
 
 
