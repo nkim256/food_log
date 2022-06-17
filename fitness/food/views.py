@@ -18,6 +18,9 @@ def api_root(request, format=None):
         'entry': reverse('entry-list', request=request, format=format),
         'instance': reverse('instance-list', request=request, format=format),
     })
+
+
+
 class FoodList(generics.ListCreateAPIView):
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
