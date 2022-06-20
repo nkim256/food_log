@@ -10,16 +10,16 @@ STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
 class Food(models.Model):
     name = models.CharField(max_length = 100, unique = True, default = "")
-    calories = models.FloatField()
-    protein = models.FloatField()
-    carbs = models.FloatField()
-    fat = models.FloatField()
+    calories = models.FloatField(default = 0)
+    protein = models.FloatField(default = 0)
+    carbs = models.FloatField(default = 0)
+    fat = models.FloatField(default = 0)
     def __str__(self):
         return self.name
     
 class Entry(models.Model):
     food = models.ForeignKey(Food, blank = True, null = True, on_delete= models.DO_NOTHING)
-    date = date.today()
+    date = models.CharField(max_length = 100, default = str(date.today()))
     serving = models.FloatField()
 
 class CalorieGoal(models.Model):
@@ -35,16 +35,16 @@ class FatGoal(models.Model):
     count = models.FloatField()
 
 class Instance(models.Model):
-    calorie_goal = models.FloatField()
-    protein_goal = models.FloatField()
-    carbs_goal = models.FloatField()
-    fat_goal = models.FloatField()
-    curr_calories = models.FloatField()
-    curr_protein = models.FloatField()
-    curr_carbs = models.FloatField()
-    curr_fat = models.FloatField()
-    weight = models.FloatField()
-    date = date.today()
+    calorie_goal = models.FloatField(default = 0)
+    protein_goal = models.FloatField(default = 0)
+    carbs_goal = models.FloatField(default = 0)
+    fat_goal = models.FloatField(default = 0)
+    curr_calories = models.FloatField(default = 0)
+    curr_protein = models.FloatField(default = 0)
+    curr_carbs = models.FloatField(default = 0)
+    curr_fat = models.FloatField(default = 0)
+    weight = models.FloatField(default = 0)
+    date = models.CharField(max_length = 100, default = str(date.today()))
 
 
 

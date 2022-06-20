@@ -8,8 +8,8 @@ class CreateFood(forms.ModelForm):
         fields = ['name', 'calories', 'protein', 'carbs', 'fat']
 class CreateEntry(forms.ModelForm):
     class Meta:
-        model = Food
-        fields = ['food', 'date', 'serving']
+        model = Entry
+        fields = ['food','date', 'serving']
 class CreateInstance(forms.ModelForm):
     class Meta:
         model = Instance
@@ -23,5 +23,5 @@ class CreateInstance(forms.ModelForm):
             'curr_carbs',
             'curr_fat',
             'weight',
-            'date',
+            'date'
             ]
