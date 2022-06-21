@@ -27,8 +27,8 @@ def home(request):
     if latest == None:
         new = CreateInstance(request.POST)
         if new.is_valid():
-            new.save()
-    if latest.date < str(date.today()):
+            new
+    elif latest.date < str(date.today()):
         new = Instance.objects.create(
             calorie_goal = latest.calorie_goal,
             protein_goal = latest.protein_goal,

@@ -17,7 +17,7 @@ class FoodSerializer(serializers.HyperlinkedModelSerializer):
 class EntrySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Entry
-        fields = ['food', 'date', 'serving']
+        fields = ['component', 'date', 'serving']
 
 class CalorieGoalSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

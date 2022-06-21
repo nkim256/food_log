@@ -18,8 +18,8 @@ class Food(models.Model):
         return self.name
     
 class Entry(models.Model):
-    food = models.ForeignKey(Food, blank = True, null = True, on_delete= models.DO_NOTHING)
-    date = models.CharField(max_length = 100, default = str(date.today()))
+    component = models.ForeignKey(Food, blank = True, null = True, on_delete= models.DO_NOTHING)
+    date = models.DateField()
     serving = models.FloatField()
 
 class CalorieGoal(models.Model):
@@ -44,8 +44,6 @@ class Instance(models.Model):
     curr_carbs = models.FloatField(default = 0)
     curr_fat = models.FloatField(default = 0)
     weight = models.FloatField(default = 0)
-    date = models.CharField(max_length = 100, default = str(date.today()))
-
-
+    date = models.DateField()
 
 

@@ -9,7 +9,7 @@ class CreateFood(forms.ModelForm):
 class CreateEntry(forms.ModelForm):
     class Meta:
         model = Entry
-        fields = ['food','date', 'serving']
+        fields = ['component','date', 'serving']
 class CreateInstance(forms.ModelForm):
     class Meta:
         model = Instance
